@@ -103,3 +103,61 @@
         transform: translate3d(3px, 0, 0);
     }
 }
+
+/* Primary button flash effect - setiap 2 saat */
+body.th-dark {
+    .btn-primary,
+    .btn--primary,
+    button.primary,
+    .action-btn,
+    [class*="btn"][class*="primary"] {
+        background-color: #ffffff !important;
+        color: #0a0a0a !important;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.2s ease;
+
+        /* Flash kilat */
+        &::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.55) 50%,
+                transparent 70%
+            );
+            transform: translateX(-100%) rotate(25deg);
+            animation: flash-kilat 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        &:hover {
+            background-color: #f0f0f0 !important;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@keyframes flash-kilat {
+    0% {
+        transform: translateX(-120%) rotate(25deg);
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    18% {
+        transform: translateX(120%) rotate(25deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(120%) rotate(25deg);
+        opacity: 0;
+    }
+}
