@@ -16,10 +16,26 @@ $themes: map-merge(
 );
 
 body.th-dark {
-    --secondary-background-color: #0a0a0a;
-    --selected-item-color: #27272a;
-    --selected-on-secondary-item-color: #18181b;
+    /* ===== Base Colors (Matte Black & White) ===== */
+    --background-color: #0a0a0a;
+    --secondary-background-color: #111111;
+    --text-color: #f5f5f5;
+    --medium-color: #a3a3a3;
+
+    /* Border & subtle elements */
     --light-border-color: rgba(255, 255, 255, 0.08);
-    --form-box-border-color-focus: #52525b;
-    --form-box-shadow-color-focus: rgba(255, 255, 255, 0.1);
+    --form-box-border-color-focus: #525252;
+    --form-box-shadow-color-focus: rgba(255, 255, 255, 0.12);
+    --form-box-shadow-color-hover: rgba(255, 255, 255, 0.08);
+
+    /* Selection */
+    --selected-item-color: #1a1a1a;
+    --selected-on-secondary-item-color: #171717;
+
+    /* Action / Primary Button = Putih */
+    --action-color: #ffffff;
+    --action-text-color: #0a0a0a;   /* teks hitam di atas butang putih */
+
+    /* Error tetap merah (fungsi penting) */
+    --error-color: #ef4444;
 }
